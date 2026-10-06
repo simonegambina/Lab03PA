@@ -20,13 +20,16 @@ def main():
 
         if scelta == "1":
             nuovo_responsabile = input("Inserisci il nuovo responsabile: ")
-            # TODO: Aggiorna responsabile nel sistema
+            deposito.responsabile = nuovo_responsabile
+            print("Responsabile modificato con successo.")
 
         elif scelta == "2":
             while True:
                 try:
                     file_path = input("Inserisci il path del file da caricare: ").strip()
+                    print("Sto provando a caricare:", file_path)
                     deposito.carica_file_strumenti(file_path)
+                    print("Caricamento completato")
                     break
                 except Exception as e:
                     print(e)
